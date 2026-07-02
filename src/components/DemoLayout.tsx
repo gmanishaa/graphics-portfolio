@@ -1,7 +1,22 @@
+import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import './DemoLayout.css'
 
-function DemoLayout({ title, tags = [], slug, hasWriteup, children }) {
+interface DemoLayoutProps {
+  title: string
+  tags?: string[]
+  slug: string
+  hasWriteup?: boolean
+  children: ReactNode
+}
+
+function DemoLayout({
+  title,
+  tags = [],
+  slug,
+  hasWriteup,
+  children,
+}: DemoLayoutProps) {
   return (
     <div className="demo-layout">
       <div className="demo-layout-header">

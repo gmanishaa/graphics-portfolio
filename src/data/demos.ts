@@ -1,4 +1,16 @@
-export const demos = [
+export interface Demo {
+  slug: string
+  title: string
+  tagline: string
+  tags: string[]
+  hasWriteup: boolean
+}
+
+export function invariant(message: string): never {
+  throw new Error(message)
+}
+
+export const demos: Demo[] = [
   {
     slug: 'volumetric-clouds',
     title: 'Volumetric Clouds',

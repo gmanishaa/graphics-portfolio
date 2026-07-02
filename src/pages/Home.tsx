@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
-import { demos } from '../data/demos.js'
+import { demos } from '../data/demos'
 import './Home.css'
 
 function Home() {
-  const gridRef = useRef(null)
+  const gridRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {

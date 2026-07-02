@@ -1,7 +1,9 @@
-import DemoLayout from '../components/DemoLayout.jsx'
-import { demos } from '../data/demos.js'
+import DemoLayout from '../components/DemoLayout'
+import { demos, invariant } from '../data/demos'
 
-const demo = demos.find((d) => d.slug === 'volumetric-clouds')
+const demo =
+  demos.find((d) => d.slug === 'volumetric-clouds') ??
+  invariant('Missing demo metadata for volumetric-clouds')
 
 function VolumetricClouds() {
   return (

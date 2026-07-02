@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
-import Nav from './components/Nav.jsx'
-import Home from './pages/Home.jsx'
-import VolumetricClouds from './pages/VolumetricClouds.jsx'
-import VolumetricCloudsWriteup from './pages/VolumetricCloudsWriteup.jsx'
-import NotFound from './pages/NotFound.jsx'
+import Nav from './components/Nav'
+import Home from './pages/Home'
+import VolumetricClouds from './pages/VolumetricClouds'
+import VolumetricCloudsWriteup from './pages/VolumetricCloudsWriteup'
+import NotFound from './pages/NotFound'
 import './App.css'
 
 function App() {
