@@ -28,10 +28,9 @@ function CloudsMesh({ controls }: CloudsMeshProps) {
     return geo
   }, [])
 
-  // Constructed once and owned here so `material.uniforms.x.value` mutations below are
-  // guaranteed to hit the exact object bound to the GPU program — passing a plain object
-  // via a declarative `uniforms={...}` JSX prop leaves that up to react-three-fiber's prop
-  // diffing, which is what silently broke updates the first time around.
+  // Constructed once here so `material.uniforms.x.value` mutations below hit the
+  // exact GPU-bound object — a declarative `uniforms={...}` prop would leave
+  // updates to react-three-fiber's prop diffing instead.
   const material = useMemo(
     () =>
       new THREE.RawShaderMaterial({

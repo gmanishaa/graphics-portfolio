@@ -9,10 +9,9 @@ import {
   type CylinderGeometryData,
 } from './geometry'
 
-// Ported from opengl-2022/src/assignment2.cpp's update()/reset() and the
-// twist state machine (START/RUN/STOP), which stretches the cylinder into a
-// twist, holds it, then un-stretches before moving on to the next twist mode.
-const STRETCH_STEP_PER_FRAME = 0.02 // at the original's assumed 60fps
+// Twist state machine (START/RUN/STOP): stretches the cylinder into a twist,
+// holds it, then un-stretches before moving on to the next twist mode.
+const STRETCH_STEP_PER_FRAME = 0.02 // per simulated frame @ 60fps
 const RUNNING_FRAMES = 180 // 180 frames @ 60fps == 3s
 const DIST_SPEED_PER_FRAME = 0.05
 const ASSUMED_FPS = 60
@@ -82,10 +81,6 @@ function CylinderMesh({ controls, onSequenceComplete }: CylinderMeshProps) {
         polygonOffset: true,
         polygonOffsetFactor: 1,
         polygonOffsetUnits: 1,
-        // the original never enabled GL_CULL_FACE, so both winding
-        // directions always rendered — without this, the bottom cap (wound
-        // the opposite way from the top) and the far side of a twisted
-        // body get backface-culled, showing the wireframe through "empty" fill
         side: THREE.DoubleSide,
       }),
     [],
@@ -125,9 +120,9 @@ function CylinderMesh({ controls, onSequenceComplete }: CylinderMeshProps) {
     lineMaterial,
   ])
 
-  // rising edge of `playing` — matches the original's spacebar handler, which
-  // always resets the stretch/timer back to the start of the current twist
-  // (or picks the first twist if it had fully cycled back to "none").
+  // rising edge of `playing` — resets the stretch/timer back to the start of
+  // the current twist (or picks the first twist if it had fully cycled back
+  // to "none").
   useEffect(() => {
     if (!controls.playing) return
     twistState.current = 'start'
@@ -141,8 +136,7 @@ function CylinderMesh({ controls, onSequenceComplete }: CylinderMeshProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [controls.playing])
 
-  // 'r' equivalent — snaps the stretch back to zero without touching which
-  // twist mode is active.
+  // resets the stretch back to zero without touching which twist mode is active.
   useEffect(() => {
     if (controls.resetToken === 0) return
     twistState.current = 'start'

@@ -1,16 +1,3 @@
-// Ported from opengl-2022/src/{vshaderA2,fshaderA2}.glsl (GLSL 150 -> GLSL ES 300 / WebGL2).
-// Changes from the original:
-//  - `ModelView`/`Projection` uniforms became three.js's built-in `modelViewMatrix`/
-//    `projectionMatrix` — object placement and camera now come from the R3F scene
-//    graph instead of matrices built by hand every frame.
-//  - `vPosition` (vec4) became `position` (vec3, three's standard attribute name);
-//    w was always 1.0 in the original so it's just hardcoded back in.
-//  - dropped the vertex shader's `out vec4 color`, which the original fragment
-//    shader never actually read (it used its own `uniform vec4 color` instead) —
-//    dead output in the source.
-
-// no #version pragma — CylinderMesh sets glslVersion={THREE.GLSL3}, which makes
-// three.js inject "#version 300 es" itself.
 export const vertexShader = /* glsl */ `
 in vec3 position;
 

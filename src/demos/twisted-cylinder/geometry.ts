@@ -1,10 +1,3 @@
-// Ported from opengl-2022/src/assignment2.cpp's createCylinderVertices /
-// createIndices / createCylinderCapVertices / createCylinderCapIndices.
-// Kept as plain index math (rather than THREE.CylinderGeometry) so the vertex
-// layout matches the original exactly — the twist vertex shader deforms each
-// vertex from its raw local position (y running 0..HEIGHT, not centered),
-// so the geometry has to keep that same coordinate convention.
-
 export const Y_DIVISIONS = 24
 export const X_DIVISIONS = 24
 export const RADIUS = 0.1
@@ -13,8 +6,8 @@ export const HEIGHT = 1.5
 export interface CylinderGeometryData {
   positions: Float32Array
   triangleIndices: Uint16Array
-  // quad-perimeter-only edges (no diagonals) — matches drawRectangleFromGrid,
-  // which draws each grid cell's 4 outer edges but never its diagonal.
+  // quad-perimeter-only edges (no diagonals), so the wireframe overlay reads
+  // as a clean grid instead of a triangulated mesh.
   lineIndices: Uint16Array
 }
 
@@ -71,7 +64,7 @@ export function buildCapGeometry(): CylinderGeometryData {
     const bottomEdge1 = 2 + i * 2
     const bottomEdge2 = 2 + (i + 1) * 2
     triangleIndices.push(0, bottomEdge1, bottomEdge2)
-    // GL_LINE_LOOP over 3 verts == a closed triangle outline
+    // each triangle drawn as a closed 3-edge loop for its wireframe outline
     lineIndices.push(0, bottomEdge1, bottomEdge1, bottomEdge2, bottomEdge2, 0)
 
     const topEdge1 = 3 + i * 2

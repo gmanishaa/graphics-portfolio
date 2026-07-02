@@ -1,12 +1,3 @@
-// Ported from opengl-2022/src/{vshader,fshader}.glsl (GLSL 150 -> GLSL ES 300 / WebGL2).
-// Two behavioural changes from the original:
-//  - `sunset` (bool) became `sunsetBlend` (float 0..1) so day/sunset is a continuous mix.
-//  - added an `aspect` uniform to correct for non-square canvases; the original ran in a
-//    fixed 512x512 window so it never needed it.
-
-// no #version pragma here — CloudsMesh sets glslVersion={THREE.GLSL3} on the
-// material, which makes three.js inject "#version 300 es" itself; adding it
-// here too duplicates the directive and fails to compile.
 export const vertexShader = /* glsl */ `
 in vec3 position;
 
@@ -52,9 +43,6 @@ const vec3 SKY_TOP_SUNSET = vec3(0.15, 0.30, 0.60);
 const vec3 SKY_BOTTOM_SUNSET = vec3(0.85, 0.45, 0.30);
 
 // globals
-// (GLSL ES requires global initializers to be constant expressions, unlike desktop
-// GLSL 150 — extinctionCoeff can't be initialized from the two globals above. It's
-// recomputed every pixel in setSceneVariables() anyway, so the literal here is moot.)
 float scatteringCoeff = 1.5;
 float absorptionCoeff = 0.4;
 float extinctionCoeff = 1.9;

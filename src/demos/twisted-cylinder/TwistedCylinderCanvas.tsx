@@ -10,14 +10,9 @@ interface TwistedCylinderCanvasProps {
   onSequenceComplete: () => void
 }
 
-// Ported from opengl-2022/src/assignment2.cpp's mouse()/update() spin handling.
-// The original: clicking a mouse button picked an axis (left = Y, middle = X,
-// right = Z) and span it at a constant rate forever, until the 's' key paused
-// it or 'r' reset it. That only really makes sense with a 3-button mouse and
-// a keyboard within reach, so on the web it's replaced with drei's
-// OrbitControls — drag to orbit, matching the "grab and turn the object"
-// intent, since with the flat/unlit shading here an orbiting camera looks
-// identical to a spinning object anyway.
+// OrbitControls (drag to orbit) instead of manual rotation — since the
+// shading here is flat/unlit, an orbiting camera looks identical to a
+// spinning object, so it's the simplest way to view the twist from any angle.
 function TwistedCylinderCanvas({
   controls,
   onSequenceComplete,
