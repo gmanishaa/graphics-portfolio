@@ -1,4 +1,5 @@
 import DemoLayout from '../components/DemoLayout'
+import VolumetricCloudsCanvas from '../demos/volumetric-clouds/VolumetricCloudsCanvas'
 import { demos, invariant } from '../data/demos'
 
 const demo =
@@ -13,10 +14,7 @@ function VolumetricClouds() {
       slug={demo.slug}
       hasWriteup={demo.hasWriteup}
     >
-      <div className="demo-placeholder">
-        Shader canvas goes here — wiring up the react-three-fiber version
-        next.
-      </div>
+      <VolumetricCloudsCanvas />
     </DemoLayout>
   )
 }
