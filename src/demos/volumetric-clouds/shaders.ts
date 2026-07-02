@@ -318,9 +318,14 @@ void march(in vec3 e, in vec3 s, out vec3 colour) {
 
       // early exit
       if (transmittance < 0.01) break;
-    }
 
-    t += STEP_SIZE;
+      t += STEP_SIZE;
+    } else {
+      // outside the sphere: sdfSphere already gives the exact distance to its
+      // surface, so jump straight to it instead of stepping through empty space
+      // in fixed STEP_SIZE increments (sphere tracing).
+      t += max(-dist, STEP_SIZE);
+    }
 
     // early exit
     if (t > 20.0) break;
