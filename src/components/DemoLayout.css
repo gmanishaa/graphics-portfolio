@@ -26,11 +26,6 @@
   font-size: 32px;
 }
 
-.writeup-link {
-  font-size: 14px;
-  color: var(--accent);
-}
-
 .demo-layout-header .demo-tags {
   list-style: none;
   display: flex;
@@ -65,4 +60,21 @@
   font-size: 14px;
   padding: 24px;
   text-align: center;
+}
+
+.demo-writeup {
+  max-width: 720px;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.demo-writeup h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.demo-writeup p {
+  color: var(--text);
+  line-height: 1.7;
 }

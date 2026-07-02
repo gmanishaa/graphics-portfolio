@@ -3,7 +3,6 @@ export interface Demo {
   title: string
   tagline: string
   tags: string[]
-  hasWriteup: boolean
 }
 
 export function invariant(message: string): never {
@@ -17,6 +16,5 @@ export const demos: Demo[] = [
     tagline:
       'Real-time ray-marched clouds with procedural noise and single-scattering illumination.',
     tags: ['WebGL', 'Ray Marching', 'GLSL'],
-    hasWriteup: true,
   },
 ]

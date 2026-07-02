@@ -5,18 +5,11 @@ import './DemoLayout.css'
 interface DemoLayoutProps {
   title: string
   tags?: string[]
-  slug: string
-  hasWriteup?: boolean
+  writeup?: ReactNode
   children: ReactNode
 }
 
-function DemoLayout({
-  title,
-  tags = [],
-  slug,
-  hasWriteup,
-  children,
-}: DemoLayoutProps) {
+function DemoLayout({ title, tags = [], writeup, children }: DemoLayoutProps) {
   return (
     <div className="demo-layout">
       <div className="demo-layout-header">
@@ -25,11 +18,6 @@ function DemoLayout({
         </Link>
         <div className="demo-layout-heading">
           <h1>{title}</h1>
-          {hasWriteup && (
-            <Link to={`/${slug}/writeup`} className="writeup-link">
-              Read the write-up →
-            </Link>
-          )}
         </div>
         <ul className="demo-tags">
           {tags.map((tag) => (
@@ -38,6 +26,7 @@ function DemoLayout({
         </ul>
       </div>
       <div className="demo-canvas-frame">{children}</div>
+      {writeup && <section className="demo-writeup">{writeup}</section>}
     </div>
   )
 }

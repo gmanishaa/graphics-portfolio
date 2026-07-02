@@ -6,9 +6,9 @@ import './VolumetricCloudsCanvas.css'
 function VolumetricCloudsCanvas() {
   const { octaves, noise, sunset, speed, paused } = useControls('Clouds', {
     octaves: { value: 3, min: 1, max: 5, step: 1 },
-    noise: { value: 'Simplex', options: ['Simplex', 'Perlin'] },
-    sunset: { value: 0, min: 0, max: 1, step: 0.01, label: 'day ↔ sunset' },
-    speed: { value: 0.6, min: 0, max: 2, step: 0.05 },
+    noise: { value: 'Perlin', options: ['Simplex', 'Perlin'] },
+    sunset: { value: 0.5, min: 0, max: 1, step: 0.01, label: 'day ↔ sunset' },
+    speed: { value: 0.35, min: 0, max: 1, step: 0.05 },
     paused: { value: false },
   })
 
