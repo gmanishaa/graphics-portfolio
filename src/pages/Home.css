@@ -4,7 +4,7 @@
 }
 
 .intro h1 {
-  font-size: 40px;
+  font-size: 36px;
   margin-bottom: 12px;
 }
 
@@ -25,12 +25,11 @@
   border-radius: 12px;
   padding: 24px;
   background: var(--bg-panel);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .demo-card:hover {
   border-color: var(--accent);
-  transform: translateY(-2px);
 }
 
 .demo-card-preview {

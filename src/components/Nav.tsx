@@ -6,7 +6,7 @@ function Nav() {
     <header className="nav">
       <div className="nav-inner">
         <Link to="/" className="nav-brand">
-          Manisha Gurukumar <span>/ graphics</span>
+          <span>gmanishaa/</span>graphics-projects
         </Link>
       </div>
     </header>

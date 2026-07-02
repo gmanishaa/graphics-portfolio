@@ -1,5 +1,4 @@
 .nav {
-  border-bottom: 1px solid var(--border);
   padding: 20px 0;
 }
 
@@ -9,9 +8,6 @@
 }
 
 .nav-brand {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
   font-size: 18px;
   font-weight: 600;
   color: var(--text-h);
