@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { LevaPanel, useControls, useCreateStore } from 'leva'
 import DemoLayout from '../components/DemoLayout'
 import VolumetricCloudsCanvas from '../demos/volumetric-clouds/VolumetricCloudsCanvas'
@@ -27,8 +28,8 @@ const CONTROL_NOTES: Array<{ name: string; description: string }> = [
     description: 'How quickly the cloud noise animates over time.',
   },
   {
-    name: 'paused',
-    description: 'Freezes the animation on its current frame.',
+    name: 'click canvas',
+    description: 'Pauses or resumes the animation on its current frame.',
   },
 ]
 
@@ -42,15 +43,15 @@ function VolumetricClouds() {
     },
     { store },
   )
-  const { sunset, speed, paused } = useControls(
+  const { sunset, speed } = useControls(
     'Background and Animation',
     {
       sunset: { value: 0.5, min: 0, max: 1, step: 0.01, label: 'day ↔ sunset' },
       speed: { value: 0.35, min: 0, max: 1, step: 0.05 },
-      paused: { value: false },
     },
     { store },
   )
+  const [paused, setPaused] = useState(false)
 
   return (
     <DemoLayout
@@ -96,6 +97,7 @@ function VolumetricClouds() {
           speed,
           paused,
         }}
+        onTogglePause={() => setPaused((p) => !p)}
       />
     </DemoLayout>
   )

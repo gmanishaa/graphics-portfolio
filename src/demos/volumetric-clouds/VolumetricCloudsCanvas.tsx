@@ -4,11 +4,15 @@ import './VolumetricCloudsCanvas.css'
 
 interface VolumetricCloudsCanvasProps {
   controls: CloudsControls
+  onTogglePause: () => void
 }
 
-function VolumetricCloudsCanvas({ controls }: VolumetricCloudsCanvasProps) {
+function VolumetricCloudsCanvas({
+  controls,
+  onTogglePause,
+}: VolumetricCloudsCanvasProps) {
   return (
-    <div className="clouds-canvas">
+    <div className="clouds-canvas" onClick={onTogglePause}>
       <Canvas gl={{ antialias: false }} dpr={[1, 1.5]}>
         <CloudsMesh controls={controls} />
       </Canvas>
