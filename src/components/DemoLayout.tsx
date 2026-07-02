@@ -5,11 +5,18 @@ import './DemoLayout.css'
 interface DemoLayoutProps {
   title: string
   tags?: string[]
+  controls?: ReactNode
   writeup?: ReactNode
   children: ReactNode
 }
 
-function DemoLayout({ title, tags = [], writeup, children }: DemoLayoutProps) {
+function DemoLayout({
+  title,
+  tags = [],
+  controls,
+  writeup,
+  children,
+}: DemoLayoutProps) {
   return (
     <div className="demo-layout">
       <div className="demo-layout-header">
@@ -26,6 +33,7 @@ function DemoLayout({ title, tags = [], writeup, children }: DemoLayoutProps) {
         </ul>
       </div>
       <div className="demo-canvas-frame">{children}</div>
+      {controls && <section className="demo-controls">{controls}</section>}
       {writeup && <section className="demo-writeup">{writeup}</section>}
     </div>
   )
