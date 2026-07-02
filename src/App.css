@@ -1,0 +1,25 @@
+.shell {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-main {
+  flex: 1;
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 40px 0 80px;
+}
+
+.not-found {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.not-found h1 {
+  font-size: 64px;
+}
+
+.not-found p {
+  margin: 12px 0 20px;
+}

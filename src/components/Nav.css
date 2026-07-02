@@ -1,0 +1,23 @@
+.nav {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.nav-inner {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.nav-brand span {
+  font-weight: 400;
+  color: var(--text);
+}
