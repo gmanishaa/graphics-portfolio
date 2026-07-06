@@ -57,6 +57,7 @@ function VolumetricClouds() {
     <DemoLayout
       title={demo.title}
       tags={demo.tags}
+      repoUrl={demo.repo}
       controls={
         <>
           <div className="demo-controls-body">

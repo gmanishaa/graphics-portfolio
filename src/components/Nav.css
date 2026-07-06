@@ -5,6 +5,24 @@
 .nav-inner {
   width: min(1100px, 92%);
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-links a {
+  display: inline-flex;
+  color: var(--text);
+}
+
+.nav-links a:hover svg path {
+  fill: url(#nav-icon-gradient);
 }
 
 .nav-brand {

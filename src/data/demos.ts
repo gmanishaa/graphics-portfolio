@@ -3,6 +3,8 @@ export interface Demo {
   title: string
   tagline: string
   tags: string[]
+  /** GitHub repo of the original (pre-web) implementation, if public */
+  repo?: string
 }
 
 export function invariant(message: string): never {
@@ -16,6 +18,7 @@ export const demos: Demo[] = [
     tagline:
       'Real-time ray-marched clouds with procedural noise and single-scattering illumination.',
     tags: ['OpenGL', 'Ray Marching', 'GLSL'],
+    repo: 'https://github.com/gmanishaa/volumetric-rendering',
   },
   {
     slug: 'twisted-cylinder',

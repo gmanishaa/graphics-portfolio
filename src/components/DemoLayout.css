@@ -26,6 +26,24 @@
   font-size: 32px;
 }
 
+.demo-repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-family: var(--mono);
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.demo-repo-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .demo-layout-header .demo-tags {
   list-style: none;
   display: flex;

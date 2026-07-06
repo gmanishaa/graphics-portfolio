@@ -42,6 +42,7 @@ function TwistedCylinder() {
     <DemoLayout
       title={demo.title}
       tags={demo.tags}
+      repoUrl={demo.repo}
       controls={
         <div className="demo-controls-body">
           <div className="demo-controls-panel">

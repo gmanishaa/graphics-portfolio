@@ -40,8 +40,8 @@ function Home() {
       <section className="intro">
         <h1>Graphics Demos</h1>
         <p>
-          A handful of real-time rendering demos, originally written in C/C++ with 
-          OpenGL and rebuilt here in WebGL so they run straight in the browser. A 
+          A handful of real-time rendering demos, originally written in C/C++ with
+          OpenGL and rebuilt here in WebGL so they run straight in the browser. A
           focused sample of the graphics/systems work — click on one below!
         </p>
       </section>
