@@ -82,6 +82,19 @@
   flex: 0 0 320px;
 }
 
+@media (max-width: 720px) {
+  .demo-controls-body {
+    flex-direction: column;
+  }
+
+  .demo-controls-panel {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+    align-self: center;
+  }
+}
+
 .demo-controls-list {
   list-style: none;
   padding: 0;

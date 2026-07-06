@@ -1,10 +1,7 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './DemoLayout.css'
-
-gsap.registerPlugin(ScrollTrigger)
 
 interface DemoLayoutProps {
   title: string
@@ -37,20 +34,13 @@ function DemoLayout({
         ease: 'power2.out',
       })
 
-      gsap.utils
-        .toArray<HTMLElement>('.demo-controls, .demo-writeup')
-        .forEach((section) => {
-          gsap.from(section, {
-            opacity: 0,
-            y: 32,
-            duration: 0.6,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: section,
-              start: 'top 85%',
-            },
-          })
-        })
+      gsap.from('.demo-controls, .demo-writeup', {
+        opacity: 0,
+        y: 32,
+        duration: 0.6,
+        delay: 0.2,
+        ease: 'power2.out',
+      })
     }, rootRef)
 
     return () => ctx.revert()

@@ -78,16 +78,6 @@ function VolumetricClouds() {
           </div>
         </>
       }
-      writeup={
-        <>
-          <h2>Write-up</h2>
-          <p>
-            Paper content goes here — downsize the COMP 4490 write-up into
-            sections covering ray marching, FBM noise, and the
-            single-scattering illumination model.
-          </p>
-        </>
-      }
     >
       <VolumetricCloudsCanvas
         controls={{
